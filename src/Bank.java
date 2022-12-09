@@ -65,7 +65,7 @@ public class Bank {
     // check whether the user ID is unique in the ID of users list
     private boolean isUserUUIDUnique(String userUUID) {
         for (User u : this.usersList) {
-            if (userUUID.compareTo(u.getUuid()) == 0) {
+            if (userUUID.compareTo(u.getUUID()) == 0) {
                 return false;
             }
         }
@@ -89,7 +89,7 @@ public class Bank {
     // if compareTo method return 0, return false
     private boolean accountUUIDUnique(ArrayList<User> usersList, String accountUUID) {
         for (User u : usersList) {
-            if (accountUUID.compareTo(u.getUuid()) == 0) {
+            if (accountUUID.compareTo(u.getUUID()) == 0) {
                 return false;
             }
         }

@@ -38,7 +38,7 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getUuid() {
+    public String getUUID() {
         return uuid;
     }
 
@@ -117,15 +117,17 @@ public class User {
         return givenPinHash.equals(this.getPinHash());
     }
 
-    // check if the UUID of the givenUser is equal to the givenUUID
+    // check if the UUID is equal to the givenUUID
     // Return true if both UUID are equal. Otherwise, return false.
     public boolean validateUUID(String givenUUID) {
-        return givenUUID.equals(this.getUuid());
+        return givenUUID.equals(this.getUUID());
     }
 
     public void addAccount(Account newAccount) {
         accounts.add(newAccount);
     }
+
+    // print account summary
 
     public String generateRandomString(int len) {
         Random random = new Random();
@@ -134,5 +136,19 @@ public class User {
             result += String.valueOf(random.nextInt(10));
         }
         return result;
+    }
+
+    // print account summary
+    public void printAccountsSummary() {
+        System.out.printf("\n\n%s's accounts summary", this.getFirstName());
+        for (int i = 0; i < this.accounts.size(); i++) {
+            System.out.printf("%d) %s\n", i + 1, this.accounts.get(i).getSummaryLine());
+        }
+        System.out.println();
+    }
+
+    // get the number of accounts of the user
+    public int numAccounts() {
+        return this.accounts.size();
     }
 }

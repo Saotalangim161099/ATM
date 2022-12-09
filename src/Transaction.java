@@ -12,5 +12,36 @@ public class Transaction {
 
     // the account in which the transaction was performed
     private Account inAccount;
-    
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    public Date getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Date timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public String getMemo() {
+        return memo;
+    }
+
+    public void setMemo(String memo) {
+        this.memo = memo;
+    }
+
+    public Account getInAccount() {
+        return inAccount;
+    }
+
+    public void setInAccount(Account inAccount) {
+        this.inAccount = inAccount;
+    }
 }
